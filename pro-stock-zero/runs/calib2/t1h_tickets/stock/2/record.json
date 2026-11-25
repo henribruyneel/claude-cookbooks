@@ -1,0 +1,43 @@
+{
+ "task": "t1h_tickets",
+ "arm": "stock",
+ "rep": 2,
+ "batch": "calib2",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.002843,
+ "input_tokens": 27092,
+ "output_tokens": 2629,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "7c314e90-2c13-4b4b-b398-f9075065e568",
+   "cost_usd": 0.0028431899999999998,
+   "input_tokens": 27092,
+   "output_tokens": 2629,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote `/tmp/psz-work/calib2/t1h_tickets/stock/2/priorities.csv` with the header `id,priority` and 40 rows, sorted by id.\n\nI left out the 5 closed tickets: T-200, T-216, T-220, T-238 and T-242.\n\nI applied the rules by hand, since this environment has no shell to run a script. Matching was whole-word and case-insensitive, so `downtime` did not count as `down`, `Breakdown` did not count as `down`, and `Refunded` did not count as `refund`. Those tickets fell through to P4 or P3 as the rules direct. I did not re-check the output against a script.",
+   "seconds": 15.9
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

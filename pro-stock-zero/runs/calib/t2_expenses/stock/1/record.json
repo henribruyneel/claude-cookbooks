@@ -1,0 +1,43 @@
+{
+ "task": "t2_expenses",
+ "arm": "stock",
+ "rep": 1,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.001483,
+ "input_tokens": 19875,
+ "output_tokens": 1355,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "445209e4-3d7b-400b-bc47-01197de02c0a",
+   "cost_usd": 0.0014825100000000003,
+   "input_tokens": 19875,
+   "output_tokens": 1355,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote `summary.csv` in the working directory with six rows:\n\n```\nmonth,category,total_eur\n2026-10,maaltijden,18.75\n2026-10,reizen,32.70\n2026-10,software,53.36\n2026-11,maaltijden,32.05\n2026-11,reizen,179.28\n2026-11,software,14.71\n```\n\nHow I got there:\n- **Duplicates:** E02 and E09 each appear twice, so each is counted once.\n- **Excluded:** E04 and E11 (category `privé`).\n- **USD conversion:** E02/E03 (29.00 USD each) → 26.68 EUR each; E08 (15.99 USD) → 14.7108 EUR; E12 (64.00 USD) → 58.88 EUR.\n- **Refund:** E06 (-12.50 EUR) reduces October `reizen` to 32.70.\n- **Rounding:** only the final group totals are rounded. The only one that needed it was November `software` (14.7108 → 14.71).\n\nOne thing to check: E12 is dated 2026-11-27, which is after today's date (2026-11-25). I included it because the rules don't exclude future dates. If it shouldn't count yet, November `reizen` becomes 120.40 and the `software` total is unchanged.",
+   "seconds": 10.0
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

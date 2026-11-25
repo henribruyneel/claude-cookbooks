@@ -1,0 +1,43 @@
+{
+ "task": "t4_policy",
+ "arm": "stock",
+ "rep": 1,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.002415,
+ "input_tokens": 22144,
+ "output_tokens": 2722,
+ "turns": 9,
+ "calls": [
+  {
+   "session_id": "f8faf847-c055-419e-828b-859a919f9ac3",
+   "cost_usd": 0.00241537,
+   "input_tokens": 22144,
+   "output_tokens": 2722,
+   "turns": 9,
+   "is_error": false,
+   "result_text": "Alle zes wijzigingen zijn toegepast in `beleid.md`. Elke edit is gelukt, maar ik heb het bestand daarna niet opnieuw ingelezen.\n\n1. **`werknemer` → `collega`** in secties 2 en 3: vier keer (twee in sectie 2, twee in sectie 3). Sectie 1 en 4 zijn niet aangepast; de \"werknemer\" in sectie 4 staat er dus nog.\n2. **Internet**: `€20` is `€25`.\n3. **Alinea \"Uitzonderingen worden…\"** en de lege regel erna zijn verwijderd.\n4. **Bullet** `- Parkeerkosten op vertoon van een bewijsstuk.` staat nu als laatste item van de lijst in sectie 3.\n5. **Versie**: `2025-03-01` is `2026-12-01`.\n6. **Kop**: `## 4. Slotbepalingen` is `## 4. Inwerkingtreding`.\n\nVerder is niets gewijzigd. Het bestand is niet onder git, dus er is geen commit gemaakt.",
+   "seconds": 13.4
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "task": "t2h_expenses",
+ "arm": "stock",
+ "rep": 2,
+ "batch": "calib2",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.003163,
+ "input_tokens": 31732,
+ "output_tokens": 3626,
+ "turns": 5,
+ "calls": [
+  {
+   "session_id": "bb9f3c64-a3f1-468f-98a1-34438484d787",
+   "cost_usd": 0.00316331,
+   "input_tokens": 31732,
+   "output_tokens": 3626,
+   "turns": 5,
+   "is_error": false,
+   "result_text": "I wrote `/tmp/psz-work/calib2/t2h_expenses/stock/2/summary.csv` with nine rows:\n\n```\nmonth,category,total_eur\n2026-09,maaltijden,293.59\n2026-09,reizen,146.91\n2026-09,software,-9.53\n2026-10,maaltijden,9.67\n2026-10,reizen,518.99\n2026-10,software,154.62\n2026-11,maaltijden,383.93\n2026-11,reizen,343.54\n2026-11,software,-26.36\n```\n\nI computed these by hand because the Bash tool is disabled in this session, so I did not run a script to check them.\n\nChoices I made:\n- **Duplicates:** I counted each `id` once, using its first occurrence. The repeated rows (X07, X13, X18, X21) were identical copies.\n- **Privé:** I dropped every `privé` row (X02, X05, X13, X27).\n- **Currency:** USD amounts were multiplied by 0.92 before summing. Rounding happens only on each final monthly total, half up.\n- **X29 (2026-11-26, 196.32 EUR):** its date is after today's date (2026-11-25). The rules don't exclude future dates, so I included it in November software. If it should be left out, the November software total becomes -22.... Specifically, it would be -26.36 − 196.32 = −222.68 rather than the figure shown; please tell me if you want it excluded.",
+   "seconds": 23.1
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

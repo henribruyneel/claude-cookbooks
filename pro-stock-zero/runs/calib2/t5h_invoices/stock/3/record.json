@@ -1,0 +1,43 @@
+{
+ "task": "t5h_invoices",
+ "arm": "stock",
+ "rep": 3,
+ "batch": "calib2",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.003585,
+ "input_tokens": 41846,
+ "output_tokens": 4089,
+ "turns": 6,
+ "calls": [
+  {
+   "session_id": "cf10f730-ab7b-4679-a48e-14498eac95dc",
+   "cost_usd": 0.0035854299999999997,
+   "input_tokens": 41846,
+   "output_tokens": 4089,
+   "turns": 6,
+   "is_error": false,
+   "result_text": "I wrote `open.csv` with nine open invoices. I worked the matching out by hand because Bash is disabled in this session, so I couldn't run a script to check the arithmetic.\n\n```\ninvoice,outstanding\nINV-0002,455.04\nINV-0005,711.30\nINV-0006,41.64\nINV-0008,437.66\nINV-0009,479.11\nINV-0011,120.70\nINV-0017,701.73\nINV-0018,459.69\nINV-0020,297.97\n```\n\nHow the payments were applied:\n- **Unmatched payments ignored:** the two \"overschrijving zonder referentie\" lines (437.66 and 297.97), and `INV-0098`, which names no existing invoice. Because the two no-reference payments are ignored, INV-0008 and INV-0020 stay open at their full amounts.\n- **Split payment:** the 999.00 on \"INV-0004 en INV-0011\" pays INV-0004 its full 329.69. The remaining 669.31 goes to INV-0011, leaving 120.70.\n- **Overpayment:** INV-0022 received 277.04 against 272.04, so it is 5.00 over and not listed. Per your rule, the excess is not carried to another invoice.\n- **Fully paid and excluded:** INV-0001, 0003, 0004, 0007, 0010, 0012, 0013, 0014, 0015, 0016, 0019, 0021, 0023 and 0024.\n\nThe file is at `/tmp/psz-work/calib2/t5h_invoices/stock/3/open.csv`.",
+   "seconds": 23.0
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "task": "t1_tickets",
+ "arm": "stock",
+ "rep": 1,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.001817,
+ "input_tokens": 22460,
+ "output_tokens": 1451,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "70893984-dff3-4320-a834-47de5e369217",
+   "cost_usd": 0.0018170400000000002,
+   "input_tokens": 22460,
+   "output_tokens": 1451,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote `priorities.csv` in the working directory with 18 rows. Tickets T-105 and T-115 are closed, so they are left out.\n\nSome judgment calls on the matching:\n- **\"Download\", \"Breakdown\", \"downtime\"** don't count as \"down\" because the match is whole-word only.\n- **\"refunds\" and \"Refunded\"** don't match \"refund\" as a whole word on the subject line, but the body of T-107 (\"a refund\") and T-117 (\"your refund was\") do, so both get P3.\n- **T-116** (\"planned downtime window\") has no whole-word outage term, so it falls to P4.\n\nThe `@acme-intern.be` rule (rule 2) comes before the outage rules, so T-103 (\"Outage test\") and T-119 (\"Staging is down\") are P4, not P1 or P2.",
+   "seconds": 9.1
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

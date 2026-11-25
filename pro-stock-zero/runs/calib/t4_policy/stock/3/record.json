@@ -1,0 +1,43 @@
+{
+ "task": "t4_policy",
+ "arm": "stock",
+ "rep": 3,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.002061,
+ "input_tokens": 21314,
+ "output_tokens": 2032,
+ "turns": 5,
+ "calls": [
+  {
+   "session_id": "b89bd582-a6bc-4fc3-a566-69e878896237",
+   "cost_usd": 0.0020613100000000002,
+   "input_tokens": 21314,
+   "output_tokens": 2032,
+   "turns": 5,
+   "is_error": false,
+   "result_text": "All six edits are applied to `beleid.md` in place:\n\n1. **Sections 2 and 3:** every `werknemer` is now `collega` (3 in section 2, 3 in section 3). Sections 1 and 4 are untouched, so section 1 still says `werknemer`.\n2. **Table:** `Internet` now reads `€25`.\n3. **Deleted:** the \"Uitzonderingen worden…\" paragraph and the blank line after it. One blank line still separates section 2 from the section 3 heading.\n4. **Added:** `- Parkeerkosten op vertoon van een bewijsstuk.` as the last bullet in section 3.\n5. **Version:** `Versie: 2026-12-01`.\n6. **Heading:** `## 4. Inwerkingtreding`.\n\nI edited the file with exact string replacements and did not re-read it afterwards. The edit tool reported success for each change.",
+   "seconds": 10.9
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

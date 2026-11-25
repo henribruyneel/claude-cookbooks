@@ -1,0 +1,43 @@
+{
+ "task": "t1_tickets",
+ "arm": "stock",
+ "rep": 0,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.001761,
+ "input_tokens": 22590,
+ "output_tokens": 1623,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "940f9e6d-0c26-4213-bb71-d757ba4974f9",
+   "cost_usd": 0.0017612699999999997,
+   "input_tokens": 22590,
+   "output_tokens": 1623,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote `priorities.csv` to the working directory with 18 rows, sorted by id. Tickets T-105 and T-115 are closed, so they are left out.\n\nPoints where the rules needed a judgement call:\n- **\"downtime\" is not \"down\":** T-116 (\"planned downtime window\") does not match the whole word `down`, so it gets P4.\n- **\"Breakdown\" is not \"down\":** T-111 gets P4 for the same reason.\n- **\"refunds\" and \"Refunded\":** the whole-word rule does not match these forms in the subject. T-107 and T-117 still get P3 because their bodies contain the whole word \"refund\".\n- **Rule order:** the `@acme-intern.be` rule runs before the outage rules, so T-103 (\"Outage test\") and T-119 (\"Staging is down\") both get P4.\n\nPriorities: P1 for T-101 and T-110, P2 for T-106, T-114 and T-120, P3 for T-104, T-107, T-108 and T-117, and P4 for the rest.",
+   "seconds": 10.1
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

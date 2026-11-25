@@ -1,0 +1,1 @@
+Expected total.txt content: 1250.00

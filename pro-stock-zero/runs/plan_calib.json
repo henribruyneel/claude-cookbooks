@@ -1,0 +1,182 @@
+[
+{
+"task": "t1_tickets",
+"arm": "stock",
+"rep": 0
+},
+{
+"task": "t1_tickets",
+"arm": "stock",
+"rep": 1
+},
+{
+"task": "t1_tickets",
+"arm": "stock",
+"rep": 2
+},
+{
+"task": "t1_tickets",
+"arm": "stock",
+"rep": 3
+},
+{
+"task": "t2_expenses",
+"arm": "stock",
+"rep": 0
+},
+{
+"task": "t2_expenses",
+"arm": "stock",
+"rep": 1
+},
+{
+"task": "t2_expenses",
+"arm": "stock",
+"rep": 2
+},
+{
+"task": "t2_expenses",
+"arm": "stock",
+"rep": 3
+},
+{
+"task": "t3_letter",
+"arm": "stock",
+"rep": 0
+},
+{
+"task": "t3_letter",
+"arm": "stock",
+"rep": 1
+},
+{
+"task": "t3_letter",
+"arm": "stock",
+"rep": 2
+},
+{
+"task": "t3_letter",
+"arm": "stock",
+"rep": 3
+},
+{
+"task": "t4_policy",
+"arm": "stock",
+"rep": 0
+},
+{
+"task": "t4_policy",
+"arm": "stock",
+"rep": 1
+},
+{
+"task": "t4_policy",
+"arm": "stock",
+"rep": 2
+},
+{
+"task": "t4_policy",
+"arm": "stock",
+"rep": 3
+},
+{
+"task": "t5_invoices",
+"arm": "stock",
+"rep": 0
+},
+{
+"task": "t5_invoices",
+"arm": "stock",
+"rep": 1
+},
+{
+"task": "t5_invoices",
+"arm": "stock",
+"rep": 2
+},
+{
+"task": "t5_invoices",
+"arm": "stock",
+"rep": 3
+},
+{
+"task": "p1_probe",
+"arm": "stock",
+"rep": 0
+},
+{
+"task": "p1_probe",
+"arm": "stock",
+"rep": 1
+},
+{
+"task": "p1_probe",
+"arm": "stock",
+"rep": 2
+},
+{
+"task": "p1_probe",
+"arm": "stock",
+"rep": 3
+},
+{
+"task": "s1_tickets",
+"arm": "bare",
+"rep": 0
+},
+{
+"task": "s1_tickets",
+"arm": "bare",
+"rep": 1
+},
+{
+"task": "s1_tickets",
+"arm": "bare",
+"rep": 2
+},
+{
+"task": "s1_tickets",
+"arm": "bare",
+"rep": 3
+},
+{
+"task": "s2_expenses",
+"arm": "bare",
+"rep": 0
+},
+{
+"task": "s2_expenses",
+"arm": "bare",
+"rep": 1
+},
+{
+"task": "s2_expenses",
+"arm": "bare",
+"rep": 2
+},
+{
+"task": "s2_expenses",
+"arm": "bare",
+"rep": 3
+},
+{
+"task": "s3_letters",
+"arm": "bare",
+"rep": 0
+},
+{
+"task": "s3_letters",
+"arm": "bare",
+"rep": 1
+},
+{
+"task": "s3_letters",
+"arm": "bare",
+"rep": 2
+},
+{
+"task": "s3_letters",
+"arm": "bare",
+"rep": 3
+}
+]

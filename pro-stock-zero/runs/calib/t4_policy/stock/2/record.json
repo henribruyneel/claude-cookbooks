@@ -1,0 +1,43 @@
+{
+ "task": "t4_policy",
+ "arm": "stock",
+ "rep": 2,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.00186,
+ "input_tokens": 21065,
+ "output_tokens": 2046,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "2bb31119-4f6b-4788-9a7b-cbb75bfab14d",
+   "cost_usd": 0.00186043,
+   "input_tokens": 21065,
+   "output_tokens": 2046,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I applied all six edits to `beleid.md` in place.\n\n1. **Werknemer → collega in sections 2 and 3:** Replaced the four occurrences (two in section 2, two in section 3). Sections 1 and 4 are unchanged, so section 1 still says \"werknemer\" and section 4 still says \"De werknemer en de werkgever\".\n2. **Internet amount:** `€20` → `€25`.\n3. **Deleted paragraph:** Removed \"Uitzonderingen worden per geval beoordeeld door HR…\" and the blank line after it.\n4. **New bullet:** Added `- Parkeerkosten op vertoon van een bewijsstuk.` as the last item in section 3's list.\n5. **Version:** `Versie: 2025-03-01` → `Versie: 2026-12-01`.\n6. **Heading:** `## 4. Slotbepalingen` → `## 4. Inwerkingtreding`.\n\nI rewrote the whole file rather than making targeted edits, so I checked the result against the original line by line. Whitespace and blank lines outside the changes should match the original. The file is not under git, so I couldn't confirm this with a diff.",
+   "seconds": 12.8
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

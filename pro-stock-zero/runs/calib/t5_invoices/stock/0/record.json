@@ -1,0 +1,43 @@
+{
+ "task": "t5_invoices",
+ "arm": "stock",
+ "rep": 0,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.00144,
+ "input_tokens": 20362,
+ "output_tokens": 1490,
+ "turns": 4,
+ "calls": [
+  {
+   "session_id": "db0d36f0-92fe-4aa8-a45b-a59fbc600bb1",
+   "cost_usd": 0.0014403100000000002,
+   "input_tokens": 20362,
+   "output_tokens": 1490,
+   "turns": 4,
+   "is_error": false,
+   "result_text": "I wrote `open.csv` in the working directory with four open invoices:\n\n```\ninvoice,outstanding\nINV-0002,49.90\nINV-0005,310.50\nINV-0007,50.00\nINV-0010,130.00\n```\n\nHow the matching came out:\n\n- **INV-0001** (250.00): paid in full, not open.\n- **INV-0002** (99.90): paid 50.00, so 49.90 is outstanding.\n- **INV-0003** (1200.00): paid 600.00 + 600.00, not open.\n- **INV-0004** and **INV-0006**: the 120.25 payment naming both goes 45.00 to INV-0004 (first named, paid in full) and the remaining 75.25 to INV-0006 (exactly its amount). Neither is open.\n- **INV-0005** (310.50): the only payment says \"betaling Studio Negen\", which names no invoice number, so it is ignored. The full 310.50 is outstanding.\n- **INV-0007** (500.00): paid 450.00, so 50.00 is outstanding.\n- **INV-0008** (18.00): paid 20.00 via \"inv-8\". That is an overpayment, so it is not open.\n- **INV-0009** (640.00): paid 320.00 + 320.01 = 640.01. That is a 0.01 overpayment, so it is not open.\n- **INV-0010** (130.00): no payments, so 130.00 is outstanding.\n- The payment referencing **INV-0099** is ignored because that invoice doesn't exist.",
+   "seconds": 9.7
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

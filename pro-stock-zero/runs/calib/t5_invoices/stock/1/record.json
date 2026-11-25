@@ -1,0 +1,43 @@
+{
+ "task": "t5_invoices",
+ "arm": "stock",
+ "rep": 1,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.001396,
+ "input_tokens": 20328,
+ "output_tokens": 1408,
+ "turns": 4,
+ "calls": [
+  {
+   "session_id": "91f2e997-cf8d-4869-953b-f85603258538",
+   "cost_usd": 0.00139593,
+   "input_tokens": 20328,
+   "output_tokens": 1408,
+   "turns": 4,
+   "is_error": false,
+   "result_text": "I wrote `open.csv` in the working directory with four open invoices:\n\n```\ninvoice,outstanding\nINV-0002,49.90\nINV-0005,310.50\nINV-0007,50.00\nINV-0010,130.00\n```\n\nHow each invoice came out:\n- **INV-0002** (99.90): \"inv 2\" paid 50.00, leaving 49.90.\n- **INV-0005** (310.50): the only payment, \"betaling Studio Negen\", names no invoice number, so it is ignored. The full amount stays open.\n- **INV-0007** (500.00): paid 450.00, leaving 50.00.\n- **INV-0010** (130.00): no payments.\n\nNot open:\n- **INV-0001** and **INV-0003** are paid in full.\n- **INV-0004** got 45.00 from the split payment \"INV-0004 en INV-0006\" (120.25), and **INV-0006** got the remaining 75.25. Both are paid in full.\n- **INV-0008** was paid 20.00 against 18.00, so it is overpaid and not open.\n- **INV-0009** got 320.00 + 320.01 = 640.01 against 640.00. It is overpaid by 0.01 and not open.\n\nThe payment referencing INV-0099 is ignored because that invoice does not exist.",
+   "seconds": 8.3
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

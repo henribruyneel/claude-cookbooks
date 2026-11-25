@@ -1,0 +1,43 @@
+{
+ "task": "t3_letter",
+ "arm": "stock",
+ "rep": 3,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.002015,
+ "input_tokens": 21018,
+ "output_tokens": 2309,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "ad27864d-16cd-4d00-bca9-d0a31b1f4305",
+   "cost_usd": 0.0020154,
+   "input_tokens": 21018,
+   "output_tokens": 2309,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote the reply to `antwoord.txt` in the working directory. It is 62 words, in formal Dutch, and cites order BE-48213.\n\nThe delivery promise is **5 januari 2027**. Counting working days from Friday 18 December 2026 and skipping 25 December and 1 January, the 10th working day is Tuesday 5 January.\n\nThe letter does not mention the refund the customer asked about, and it does not use \"sorry\" or \"excuses\". I addressed the customer as \"heer/mevrouw\" because the name alone doesn't show gender.\n\nThe system date in this session reads 25 November 2026, not 18 December. I used the 18 December date you gave. If today is actually 25 November, the deadline would change.",
+   "seconds": 13.7
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

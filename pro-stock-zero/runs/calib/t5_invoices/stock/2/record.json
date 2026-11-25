@@ -1,0 +1,43 @@
+{
+ "task": "t5_invoices",
+ "arm": "stock",
+ "rep": 2,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.001512,
+ "input_tokens": 20254,
+ "output_tokens": 1363,
+ "turns": 4,
+ "calls": [
+  {
+   "session_id": "6faea68b-f4fc-4f0a-b23f-575d115e8444",
+   "cost_usd": 0.0015115800000000002,
+   "input_tokens": 20254,
+   "output_tokens": 1363,
+   "turns": 4,
+   "is_error": false,
+   "result_text": "I wrote `open.csv` in the working directory with four open invoices:\n\n```\ninvoice,outstanding\nINV-0002,49.90\nINV-0005,310.50\nINV-0007,50.00\nINV-0010,130.00\n```\n\n- **INV-0002**: 99.90 invoiced, 50.00 paid (\"inv 2\"), so 49.90 remains.\n- **INV-0005**: 310.50 invoiced, nothing paid. The \"betaling Studio Negen\" payment names the customer, not an invoice number, so I ignored it under the matching rules.\n- **INV-0007**: 500.00 invoiced, 450.00 paid, so 50.00 remains.\n- **INV-0010**: 130.00 invoiced, no payments.\n\nNot open, so left out:\n- **INV-0001, INV-0003, INV-0006**: fully paid.\n- **INV-0004**: the 120.25 payment covers its 45.00 in full, and the remaining 75.25 goes to INV-0006, which that exactly covers.\n- **INV-0008**: paid 20.00 against 18.00, an overpayment that stays on that invoice.\n- **INV-0009**: paid 640.01 against 640.00, an overpayment of 0.01 that stays on that invoice.\n- **INV-0099** (88.00): no such invoice, so ignored.\n\nI checked the arithmetic by hand and did not run a script.",
+   "seconds": 9.1
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

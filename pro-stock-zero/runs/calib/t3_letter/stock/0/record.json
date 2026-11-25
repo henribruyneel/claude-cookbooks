@@ -1,0 +1,43 @@
+{
+ "task": "t3_letter",
+ "arm": "stock",
+ "rep": 0,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.001973,
+ "input_tokens": 20862,
+ "output_tokens": 2260,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "caed9c0e-e379-4085-8840-89abea8f3aa4",
+   "cost_usd": 0.0019731899999999997,
+   "input_tokens": 20862,
+   "output_tokens": 2260,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote the reply to `/tmp/psz-work/calib/t3_letter/stock/0/antwoord.txt`. It is 57 words, within the 120-word limit.\n\nThe delivery date is **5 januari 2027**. Counting from Friday 18 December 2026, the working days are 21, 22, 23, 24 December, then 28, 29, 30, 31 December, then 4 and 5 January. I skipped Saturdays, Sundays, 25 December and 1 January.\n\nThe reply addresses the customer as \"Geachte Hilde Peeters\" rather than \"Mevrouw\" because the complaint gives no title and I shouldn't assume one from the name. It doesn't mention the refund question, since you asked me not to promise or mention one. If you want the reply to address that question, tell me what to say.",
+   "seconds": 12.8
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

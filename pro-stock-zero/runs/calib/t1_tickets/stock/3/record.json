@@ -1,0 +1,43 @@
+{
+ "task": "t1_tickets",
+ "arm": "stock",
+ "rep": 3,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.001885,
+ "input_tokens": 22585,
+ "output_tokens": 1873,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "e8dca1b3-f924-41e0-98d8-8c46a2cf87e7",
+   "cost_usd": 0.0018848900000000002,
+   "input_tokens": 22585,
+   "output_tokens": 1873,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote `priorities.csv` in the working directory with 18 rows. Tickets T-105 and T-115 are closed, so they're left out.\n\nTwo matching calls you might want to check:\n- **Whole-word matching:** \"refunds\" (T-107 subject) and \"Refunded\" (T-117 subject) don't count as `refund`. Both tickets still get P3 because their bodies contain \"refund\" as a whole word. \"Breakdown\" and \"Downtime\" don't count as `down`.\n- **Rule order:** the `@acme-intern.be` rule comes before the outage rule, so T-103 and T-119 are P4 even though they mention an outage.\n\n| id | priority | reason |\n|---|---|---|\n| T-101 | P1 | enterprise, \"down\" |\n| T-102 | P4 | no keyword |\n| T-103 | P4 | acme-intern.be |\n| T-104 | P3 | \"Factuur\" |\n| T-106 | P2 | non-enterprise, \"kan niet inloggen\" |\n| T-107 | P3 | \"refund\" in body |\n| T-108 | P3 | \"invoice\" |\n| T-109 | P4 | acme-intern.be |\n| T-110 | P1 | enterprise, \"cannot log in\" |\n| T-111 | P4 | no keyword |\n| T-112 | P4 | no keyword |\n| T-113 | P4 | no keyword |\n| T-114 | P2 | non-enterprise, \"outage\" |\n| T-116 | P4 | \"Downtime\" is not \"down\" |\n| T-117 | P3 | \"refund\" in body |\n| T-118 | P4 | no keyword |\n| T-119 | P4 | acme-intern.be |\n| T-120 | P2 | non-enterprise, \"kan niet inloggen\" |",
+   "seconds": 10.8
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

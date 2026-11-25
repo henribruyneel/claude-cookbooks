@@ -1,0 +1,43 @@
+{
+ "task": "t5h_invoices",
+ "arm": "stock",
+ "rep": 2,
+ "batch": "calib2",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.002616,
+ "input_tokens": 22903,
+ "output_tokens": 3003,
+ "turns": 4,
+ "calls": [
+  {
+   "session_id": "286cd318-fa11-46a1-accf-6c75fdfc5202",
+   "cost_usd": 0.00261647,
+   "input_tokens": 22903,
+   "output_tokens": 3003,
+   "turns": 4,
+   "is_error": false,
+   "result_text": "I wrote `open.csv` with 9 open invoices. I had no shell tool here, so I worked the totals out by hand rather than running a script. I checked each invoice against the payments once.\n\n```\ninvoice,outstanding\nINV-0002,455.04\nINV-0005,711.30\nINV-0006,41.64\nINV-0008,437.66\nINV-0009,479.11\nINV-0011,120.70\nINV-0017,701.73\nINV-0018,459.69\nINV-0020,297.97\n```\n\nNotes on the calculation:\n- **INV-0011** gets 669.31 from the split payment (`INV-0004 en INV-0011`, 999.00). INV-0004 takes its full 329.69 first.\n- **INV-0022** is overpaid by 5.00 (277.04 against 272.04). It is closed, and the excess is not moved to another invoice.\n- **INV-0013, 0014 and 0015** are each paid exactly in full by two payments, so they are closed.\n- **INV-0098** does not exist, so its 120.00 payment is ignored. The two payments with no reference are ignored too.\n\nThe output is at `/tmp/psz-work/calib2/t5h_invoices/stock/2/open.csv`.",
+   "seconds": 17.9
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

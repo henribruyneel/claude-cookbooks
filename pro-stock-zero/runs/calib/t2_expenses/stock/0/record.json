@@ -1,0 +1,45 @@
+{
+ "task": "t2_expenses",
+ "arm": "stock",
+ "rep": 0,
+ "batch": "calib",
+ "pass": false,
+ "reasons": [
+  "rows differ: got [['2026-10', 'maaltijden', '18.75'], ['2026-10', 'reizen', '32.70'], ['2026-10', 'software', '26.68'], ['2026-11', 'maaltijden', '32.05'], ['2026-11', 'reizen', '179.28'], ['2026-11', 'software', '14.71']], expected [['2026-10', 'maaltijden', '18.75'], ['2026-10', 'reizen', '32.70'], ['2026-10', 'software', '53.36'], ['2026-11', 'maaltijden', '32.05'], ['2026-11', 'reizen', '179.28'], ['2026-11', 'software', '14.71']]"
+ ],
+ "cheat": null,
+ "cost_usd": 0.001244,
+ "input_tokens": 19741,
+ "output_tokens": 1227,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "19a02dcc-e3b0-4927-9a42-97287dc0673b",
+   "cost_usd": 0.0012437,
+   "input_tokens": 19741,
+   "output_tokens": 1227,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote `summary.csv` to the working directory with six rows:\n\n```\nmonth,category,total_eur\n2026-10,maaltijden,18.75\n2026-10,reizen,32.70\n2026-10,software,26.68\n2026-11,maaltijden,32.05\n2026-11,reizen,179.28\n2026-11,software,14.71\n```\n\nHow I handled the rules:\n- **Duplicates:** E02 and E09 each appear twice in the input, so I counted each once.\n- **Excluded:** The `privé` rows (E04, E11) are left out.\n- **Currency:** USD amounts were multiplied by 0.92. E02 is 29.00 USD, which is 26.68 EUR. E08 is 15.99 USD, which is 14.7108 EUR. E12 is 64.00 USD, which is 58.88 EUR.\n- **Refund:** E06 (-12,50) reduces October reizen.\n- **Rounding:** Totals were summed unrounded and rounded once at the end. The November software total is 14.7108, which rounds to 14.71.\n\nE12 is dated 2026-11-27, which is after today's date (2026-11-25). I included it because the rules don't exclude future dates. If it shouldn't count yet, November reizen would be 120.40 and the total would be 120.40.",
+   "seconds": 9.2
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

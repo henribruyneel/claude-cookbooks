@@ -1,0 +1,16 @@
+{
+  "t1_tickets": "parallel",
+  "t2_expenses": "mixed",
+  "t3_letter": "sequential",
+  "t4_policy": "sequential",
+  "t5_invoices": "mixed",
+  "p1_probe": "sequential",
+  "s1_tickets": "parallel",
+  "s2_expenses": "mixed",
+  "s3_letters": "sequential",
+  "t1h_tickets": "parallel",
+  "t2h_expenses": "mixed",
+  "t5h_invoices": "mixed",
+  "s4_letters": "sequential",
+  "s5_faq": "parallel"
+}

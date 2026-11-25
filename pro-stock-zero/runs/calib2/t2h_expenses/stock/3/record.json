@@ -1,0 +1,43 @@
+{
+ "task": "t2h_expenses",
+ "arm": "stock",
+ "rep": 3,
+ "batch": "calib2",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.002832,
+ "input_tokens": 30908,
+ "output_tokens": 3199,
+ "turns": 4,
+ "calls": [
+  {
+   "session_id": "5ef5aed1-75a8-42d5-830f-c47204caaaa5",
+   "cost_usd": 0.0028319400000000002,
+   "input_tokens": 30908,
+   "output_tokens": 3199,
+   "turns": 4,
+   "is_error": false,
+   "result_text": "I wrote `summary.csv` to `/tmp/psz-work/calib2/t2h_expenses/stock/3/summary.csv`:\n\n```\nmonth,category,total_eur\n2026-09,maaltijden,293.59\n2026-09,reizen,146.91\n2026-09,software,-9.53\n2026-10,maaltijden,9.67\n2026-10,reizen,518.99\n2026-10,software,154.62\n2026-11,maaltijden,383.93\n2026-11,reizen,343.54\n2026-11,software,-26.36\n```\n\nChoices and notes:\n\n- **Duplicates:** I kept the first row for each `id` and dropped the repeats. X07, X13, X18 and X21 each appear more than once.\n- **Excluded:** all `privé` rows (X02, X05, X13, X27).\n- **USD:** each USD amount was multiplied by 0.92 before summing. Rounding happened only on the final monthly totals, half up.\n- **Future-dated row:** X29 (software, 196.32 EUR) is dated 2026-11-26, which is after today (2026-11-25). I included it because the rules don't exclude future dates. If it shouldn't count yet, the 2026-11 software total becomes -222.68.\n- **Method:** Bash isn't available in this session, so I computed the totals by hand rather than with a script. I checked the arithmetic once, but a second check would be worthwhile before relying on the figures.",
+   "seconds": 19.4
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

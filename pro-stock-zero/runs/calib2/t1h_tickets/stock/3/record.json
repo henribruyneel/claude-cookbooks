@@ -1,0 +1,43 @@
+{
+ "task": "t1h_tickets",
+ "arm": "stock",
+ "rep": 3,
+ "batch": "calib2",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.003636,
+ "input_tokens": 38477,
+ "output_tokens": 3655,
+ "turns": 4,
+ "calls": [
+  {
+   "session_id": "27ca25ea-4601-4219-839d-a2c0bfcd6dcc",
+   "cost_usd": 0.00363609,
+   "input_tokens": 38477,
+   "output_tokens": 3655,
+   "turns": 4,
+   "is_error": false,
+   "result_text": "I wrote `/tmp/psz-work/calib2/t1h_tickets/stock/3/priorities.csv` with 40 rows (plus the header), sorted by id.\n\nThe Bash tool is disabled in this session, so I couldn't run a script. I applied the rules to each of the 45 tickets by hand and wrote the file with the Write tool. I have not verified the output with a program.\n\n- **Left out (5 closed tickets):** T-200, T-216, T-220, T-238, T-242.\n- **Outage matches:** \"cannot log in\" (T-201), \"kan niet inloggen\" (T-218), and \"down\" as a standalone word in \"Platform down\" (T-207, T-219). \"Outage?\" matched on \"outage\" (T-203, T-236, T-239).\n- **Near-misses I did not count as matches:** \"downtime\" (T-205, T-241), \"Download\" (T-210), and \"Breakdown\" (T-211). \"Kan niet uitloggen\" (log out) is not \"kan niet inloggen\" (log in), so those tickets stay P4.\n- **Refund matches:** \"Refunded?\" (T-226, T-232, T-233) does not contain the whole word \"refund\", so under the whole-word rule it should not match. I still marked them P3 because the body reads \"Has my refund been processed?\", which contains the word \"refund\".\n- **Acme-intern rule:** T-221, T-230, T-231, and T-237 are P4 because rule 2 comes before the invoice and outage rules.",
+   "seconds": 20.9
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

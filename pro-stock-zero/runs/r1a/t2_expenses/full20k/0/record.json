@@ -1,0 +1,43 @@
+{
+ "task": "t2_expenses",
+ "arm": "full20k",
+ "rep": 0,
+ "batch": "r1a",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.008671,
+ "input_tokens": 109105,
+ "output_tokens": 1856,
+ "turns": 4,
+ "calls": [
+  {
+   "session_id": "60ce194e-5845-4bca-aee3-ac8d8416f0ac",
+   "cost_usd": 0.0086713,
+   "input_tokens": 109105,
+   "output_tokens": 1856,
+   "turns": 4,
+   "is_error": false,
+   "result_text": "`summary.csv` is written to `/tmp/psz-work/r1a/t2_expenses/full20k/0/summary.csv` with six rows:\n\n| month | category | total_eur |\n|---|---|---|\n| 2026-10 | maaltijden | 18.75 |\n| 2026-10 | reizen | 32.70 |\n| 2026-10 | software | 53.36 |\n| 2026-11 | maaltijden | 32.05 |\n| 2026-11 | reizen | 179.28 |\n| 2026-11 | software | 14.71 |\n\n- Duplicates removed: E02 and E09 each appear twice, and only one copy of each is counted.\n- Excluded: E04 and E11 (`privé`).\n- E12 is dated 2026-11-27, two days after today (2026-11-25). I included it because the rules don't exclude future dates. Check it if that date is a typo.\n- I checked the totals by hand. I had no way to run a script here, so the arithmetic is unverified by code.",
+   "seconds": 11.6
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

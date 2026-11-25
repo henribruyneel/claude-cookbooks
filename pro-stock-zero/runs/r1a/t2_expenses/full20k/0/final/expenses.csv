@@ -1,0 +1,15 @@
+id,date,category,amount,currency
+E01,2026-10-03,reizen,"45,20",EUR
+E02,2026-10-05,software,"29.00",USD
+E03,2026-10-05,software,"29.00",USD
+E02,2026-10-05,software,"29.00",USD
+E04,2026-10-11,privé,"80,00",EUR
+E05,2026-10-17,maaltijden,"18,75",EUR
+E06,2026-10-28,reizen,"-12,50",EUR
+E07,2026-11-02,reizen,"120.40",EUR
+E08,2026-11-04,software,"15.99",USD
+E09,2026-11-09,maaltijden,"22,10",EUR
+E10,2026-11-09,maaltijden,"9,95",EUR
+E09,2026-11-09,maaltijden,"22,10",EUR
+E11,2026-11-20,privé,"300.00",EUR
+E12,2026-11-27,reizen,"64.00",USD

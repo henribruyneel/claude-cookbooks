@@ -1,0 +1,45 @@
+{
+ "task": "t2_expenses",
+ "arm": "full",
+ "rep": 1,
+ "batch": "r1a",
+ "pass": false,
+ "reasons": [
+  "rows differ: got [['2026-10', 'maaltijden', '18.75'], ['2026-10', 'reizen', '32.70'], ['2026-10', 'software', '26.68'], ['2026-11', 'maaltijden', '32.05'], ['2026-11', 'reizen', '179.28'], ['2026-11', 'software', '14.71']], expected [['2026-10', 'maaltijden', '18.75'], ['2026-10', 'reizen', '32.70'], ['2026-10', 'software', '53.36'], ['2026-11', 'maaltijden', '32.05'], ['2026-11', 'reizen', '179.28'], ['2026-11', 'software', '14.71']]"
+ ],
+ "cheat": null,
+ "cost_usd": 0.001796,
+ "input_tokens": 21922,
+ "output_tokens": 1063,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "a1cbfbf2-3721-48e5-8b54-9fda968beca3",
+   "cost_usd": 0.0017964499999999998,
+   "input_tokens": 21922,
+   "output_tokens": 1063,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "`summary.csv` is written to `/tmp/psz-work/r1a/t2_expenses/full/1/summary.csv` with six rows, one per month and category.\n\nI did the arithmetic by hand and did not run a script to check it.\n\nAssumptions:\n- Duplicates E02 and E09 were counted once each.\n- USD amounts were converted at 0.92 and rounded only in the final totals. Software 2026-11 is 15.99 × 0.92 = 14.7108, which rounds to 14.71.\n- E12 is dated 2026-11-27, after today (2026-11-25). I included it because the rules don't exclude future dates. If it shouldn't count yet, the 2026-11 reizen total drops from 179.28 to 120.40.",
+   "seconds": 8.7
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

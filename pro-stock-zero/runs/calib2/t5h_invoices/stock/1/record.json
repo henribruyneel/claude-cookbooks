@@ -1,0 +1,43 @@
+{
+ "task": "t5h_invoices",
+ "arm": "stock",
+ "rep": 1,
+ "batch": "calib2",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.003059,
+ "input_tokens": 32007,
+ "output_tokens": 3516,
+ "turns": 5,
+ "calls": [
+  {
+   "session_id": "6e8c5b2d-0842-446b-a0f2-084453fa2693",
+   "cost_usd": 0.00305862,
+   "input_tokens": 32007,
+   "output_tokens": 3516,
+   "turns": 5,
+   "is_error": false,
+   "result_text": "I wrote `open.csv` in the working directory with 9 open invoices.\n\n```\ninvoice,outstanding\nINV-0002,455.04\nINV-0005,711.30\nINV-0006,41.64\nINV-0008,437.66\nINV-0009,479.11\nINV-0011,120.70\nINV-0017,701.73\nINV-0018,459.69\nINV-0020,297.97\n```\n\nBash is disabled in this session, so I could not run a script. I worked the amounts out by hand from the two CSVs and wrote the file directly. I checked each invoice against its payments, but nothing was executed.\n\nHow the payments were applied:\n- **INV-0002:** 195.02 paid, so 455.04 is outstanding.\n- **INV-0011:** the 999.00 payment referencing \"INV-0004 en INV-0011\" pays INV-0004 in full (329.69). The remaining 669.31 goes to INV-0011, leaving 120.70.\n- **INV-0022:** 277.04 paid against 272.04. The 5.00 overpayment is not carried anywhere, so the invoice is closed.\n- **Multi-payment invoices:** INV-0013, INV-0014, INV-0015 and INV-0023 each get two payments that sum to the invoice amount, so they are closed.\n- **Ignored payments:** the two \"overschrijving zonder referentie\" rows (437.66 and 297.97) have no invoice number. The 120.00 payment referencing INV-0098 is ignored because that invoice does not exist. INV-0008 and INV-0020 therefore have no payments and are listed at their full amounts.",
+   "seconds": 20.3
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

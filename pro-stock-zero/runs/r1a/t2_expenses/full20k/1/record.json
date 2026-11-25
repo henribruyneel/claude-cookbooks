@@ -1,0 +1,43 @@
+{
+ "task": "t2_expenses",
+ "arm": "full20k",
+ "rep": 1,
+ "batch": "r1a",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.002441,
+ "input_tokens": 108912,
+ "output_tokens": 1606,
+ "turns": 4,
+ "calls": [
+  {
+   "session_id": "3a5b07db-2983-4591-acc5-774ac5435958",
+   "cost_usd": 0.00244062,
+   "input_tokens": 108912,
+   "output_tokens": 1606,
+   "turns": 4,
+   "is_error": false,
+   "result_text": "`summary.csv` is written to `/tmp/psz-work/r1a/t2_expenses/full20k/1/summary.csv` with six rows, one per month and category that has expenses.\n\nI did the arithmetic by hand because this session has no shell to run a script, so I did not run a check. The file has 15 lines, so I read all of it.\n\nChoices I made:\n- **Duplicates:** E02 and E09 each appear twice; I kept the first occurrence of each.\n- **E12** is dated 2026-11-27, two days after today (2026-11-25). The rules don't exclude future dates, so I included it. If it shouldn't count yet, its row drops 58.88 from `2026-11,reizen`.\n- **Rounding:** only `2026-11,software` needed rounding (14.7108 → 14.71).",
+   "seconds": 10.7
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

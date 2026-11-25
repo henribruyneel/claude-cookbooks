@@ -1,0 +1,43 @@
+{
+ "task": "t2_expenses",
+ "arm": "stock",
+ "rep": 2,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.001358,
+ "input_tokens": 19896,
+ "output_tokens": 1393,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "3672ece1-aee8-44a7-9308-60786b842919",
+   "cost_usd": 0.00135789,
+   "input_tokens": 19896,
+   "output_tokens": 1393,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote `summary.csv` to the project folder with six rows:\n\n```\nmonth,category,total_eur\n2026-10,maaltijden,18.75\n2026-10,reizen,32.70\n2026-10,software,53.36\n2026-11,maaltijden,32.05\n2026-11,reizen,179.28\n2026-11,software,14.71\n```\n\nHow I got there:\n- **Duplicates:** E02 and E09 each appear twice, so I counted each once. E03 is a separate expense with the same amount and date as E02, so it stays.\n- **Excluded:** E04 and E11 (`privé`).\n- **USD conversion:** E02/E03 are 29.00 USD each, which is 26.68 EUR each. E08 is 15.99 USD, which is 14.7108 EUR. E12 is 64.00 USD, which is 58.88 EUR.\n- **Refund:** E06 (-12.50 EUR) reduces October reizen.\n- **Rounding:** Only the final totals are rounded. The only non-exact total is November software (14.7108), which rounds to 14.71.\n\nOne thing to check: E12 is dated 2026-11-27, which is after today's date (2026-11-25). The rules don't say to exclude future-dated rows, so I included it. If it should be left out, November reizen would be 120.40 and the file would need that one change.",
+   "seconds": 10.1
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

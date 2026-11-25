@@ -1,0 +1,43 @@
+{
+ "task": "t1_tickets",
+ "arm": "stock",
+ "rep": 2,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.001715,
+ "input_tokens": 22567,
+ "output_tokens": 1543,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "8a1c6d3e-bfb0-4dc3-b0ed-12677abdfc0a",
+   "cost_usd": 0.00171515,
+   "input_tokens": 22567,
+   "output_tokens": 1543,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote `priorities.csv` in the working directory with 18 rows, sorted by id. Tickets T-105 and T-115 are excluded because they are closed.\n\nChoices I made where the rules left room:\n- **Whole-word matching:** \"downtime\" (T-116) does not match `down`, and \"Breakdown\" (T-111) does not match either. \"refunds\" in T-107's subject does not match `refund`, but its body says \"refund\", so the ticket still gets P3.\n- **Phrases:** \"cannot log in\" and \"kan niet inloggen\" are matched case-insensitively as phrases, so T-110, T-106 and T-120 count as outages.\n- **Rule order:** the `@acme-intern.be` check (rule 2) runs before the outage and invoice checks, so T-103, T-109 and T-119 get P4 even though they mention an outage or invoice.",
+   "seconds": 9.8
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

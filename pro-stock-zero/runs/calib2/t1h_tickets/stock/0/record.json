@@ -1,0 +1,43 @@
+{
+ "task": "t1h_tickets",
+ "arm": "stock",
+ "rep": 0,
+ "batch": "calib2",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.002539,
+ "input_tokens": 26621,
+ "output_tokens": 2210,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "770b825d-55c8-4e26-889c-a64ab4e94a99",
+   "cost_usd": 0.00253911,
+   "input_tokens": 26621,
+   "output_tokens": 2210,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote `priorities.csv` to `/tmp/psz-work/calib2/t1h_tickets/stock/0/priorities.csv` with 39 rows, sorted by id.\n\nI applied the rules by hand, not with a script. I left out the 6 closed tickets (T-200, T-216, T-220, T-238, T-242), which leaves 45 − 6 = 39 rows.\n\nTwo matching decisions affect the output:\n- **\"Refunded?\"** does not match `refund` as a whole word, so the subject alone would not trigger P3. T-226, T-232 and T-233 still get P3 because their bodies say \"Has my refund been processed?\".\n- **\"Planned downtime\" and \"Breakdown per region\"** do not match `down`, because whole-word matching excludes them. T-205, T-211 and T-241 therefore get P4.",
+   "seconds": 14.1
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}

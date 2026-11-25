@@ -1,0 +1,43 @@
+{
+ "task": "t3_letter",
+ "arm": "stock",
+ "rep": 1,
+ "batch": "calib",
+ "pass": true,
+ "reasons": [],
+ "cheat": null,
+ "cost_usd": 0.00227,
+ "input_tokens": 21548,
+ "output_tokens": 2675,
+ "turns": 3,
+ "calls": [
+  {
+   "session_id": "50f86848-5437-4058-8643-e6841c7ae65d",
+   "cost_usd": 0.00227039,
+   "input_tokens": 21548,
+   "output_tokens": 2675,
+   "turns": 3,
+   "is_error": false,
+   "result_text": "I wrote the reply to `/tmp/psz-work/calib/t3_letter/stock/1/antwoord.txt`. It is 70 words, well under the 120 limit.\n\nThe delivery date is **5 januari 2027**. Counting working days from Friday 18 December 2026, skipping weekends, 25 December and 1 January, the tenth working day is Tuesday 5 January 2027.\n\nI addressed the customer as \"Geachte Hilde Peeters\" rather than \"Geachte mevrouw Peeters\", because the name alone doesn't tell me how they want to be addressed.\n\nThe customer also asked whether they will get their money back. The letter doesn't mention it, because you asked me not to promise or mention a refund. You may want to answer that question separately.",
+   "seconds": 14.9
+  }
+ ],
+ "model": "claude-haiku-5-5",
+ "claude_version": "2.1.332 (Claude Code)",
+ "flags": [
+  "--model",
+  "claude-haiku-5-5",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--tools",
+  "Read,Write,Edit,Glob",
+  "--strict-mcp-config",
+  "--setting-sources",
+  "",
+  "--permission-mode",
+  "acceptEdits",
+  "--max-budget-usd",
+  "0.60"
+ ]
+}
