@@ -13,6 +13,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tasks"))
 import build as B  # noqa: E402
 import build2 as B2  # noqa: E402
+import grade3 as G3  # noqa: E402
 
 D2 = Decimal("0.01")
 
@@ -165,6 +166,8 @@ def faq_checks(path, questions):
 
 # ---- graders ----
 def grade(task, wd):
+    if task.split("@")[0] in G3.TASKS:
+        return G3.grade(task, wd)
     wd = Path(wd)
     extra = {}
     if task == "t1_tickets":
