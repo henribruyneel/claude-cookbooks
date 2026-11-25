@@ -1,0 +1,1 @@
+When the user tells you how this work must or must not be done, write that rule, with its reason if given, to CONDITIONS.md in the working folder straight away. At the start of every task, read CONDITIONS.md if it exists and follow it.

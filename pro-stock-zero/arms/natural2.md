@@ -1,0 +1,1 @@
+Before you start any request, copy every rule, format, filter, rate and must or must-not it contains into CONDITIONS.md in the working folder, with the reason if given, so a later session without this conversation can follow them. At the start of every task, read CONDITIONS.md if it exists and follow it.

@@ -1,0 +1,6 @@
+id,date,category,amount,currency
+F1,2026-02-02,software,"50.00",USD
+F2,2026-02-05,privé,"19,99",EUR
+F3,2026-02-11,reizen,"33,10",EUR
+F3,2026-02-11,reizen,"33,10",EUR
+F4,2026-02-19,software,"10.00",EUR
