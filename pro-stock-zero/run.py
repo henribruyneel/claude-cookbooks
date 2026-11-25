@@ -29,7 +29,7 @@ FLAGS = [
 ]
 SYSTEM_TEXT = {  # E3 arms: standing text appended to the system prompt
     "stock": None, "retry": None, "bare": None, "state": None, "bare_retry": None,
-    "three": "three_lines.md", "full": "full_procedure.md", "full20k": "full_plus_20k.md",
+    "procedure": None, "three": "three_lines.md", "full": "full_procedure.md", "full20k": "full_plus_20k.md",
 }
 VERSION = subprocess.run(["claude", "--version"], capture_output=True, text=True).stdout.strip()
 WORKROOT = Path(tempfile.gettempdir()) / "psz-work"  # outside the repo: no project CLAUDE.md, no graders
@@ -106,13 +106,20 @@ def job(batch, j):
         p1 = (tdir / "prompt1.md").read_text()
         if arm == "state":
             p1 += (ARMS / "state_instruction.md").read_text()
+        start = (ARMS / "procedure_start.md").read_text()
+        if arm == "procedure":  # the owner's routine as handed over: template in folder, start line pasted
+            shutil.copy(ARMS / "procedure_template.md", wd / "STATE.md")
+            p1 = start + "STATE.md is still empty: first fill Done means and Never from my request below.\n\n" + p1
         r1 = claude(p1, wd, rdir / "s1.jsonl")
         calls.append(r1)
         j["interim"] = grade(task + "@s1", wd)
         for f in (tdir / "files1").iterdir():  # session 2 starts with only the outputs
             (wd / f.name).unlink(missing_ok=True)
         copy_files(tdir / "files2", wd)
-        r2 = claude((tdir / "prompt2.md").read_text(), wd, rdir / "s2.jsonl")
+        p2 = (tdir / "prompt2.md").read_text()
+        if arm == "procedure":
+            p2 = start + "\n" + p2
+        r2 = claude(p2, wd, rdir / "s2.jsonl")
         calls.append(r2)
         if arm == "bare_retry":
             retry_loop(r2["session_id"], wd, rdir, r1["cost_usd"] + r2["cost_usd"], j["retry_target_usd"], calls)
